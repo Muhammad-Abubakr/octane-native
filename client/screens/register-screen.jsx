@@ -1,12 +1,35 @@
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
+import { FIREBASE_AUTH } from '../services/firebase/config';
 
 const RegisterScreen = ({ navigation }) => {
+    /* State */
     const [ name, setName ] = useState();
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
     const [ confirmPassword, setConfirmPassword ] = useState();
+
+    /* Methods */
+    const _registerUser = async (_) => {
+
+        try {
+            const creds = await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password);
+
+            if (creds.user) {
+
+                // updating the display name of the user
+                await updateProfile(creds.user, {
+                    displayName: name,
+                });
+
+                navigation.navigate('Login');
+            }
+        } catch (e) {
+            Alert.alert('Error', e.message);
+        }
+    };
 
 
     return (
@@ -63,7 +86,10 @@ const RegisterScreen = ({ navigation }) => {
                     </View>
 
                     {/* Submit Button */ }
-                    <TouchableOpacity style={ styles.button }>
+                    <TouchableOpacity
+                        style={ styles.button }
+                        onPress={ _registerUser }
+                    >
                         <Text style={ styles.buttonText }>Register</Text>
                     </TouchableOpacity>
                 </View>

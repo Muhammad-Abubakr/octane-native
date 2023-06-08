@@ -28,6 +28,7 @@ function App() {
                         statusBarColor: '#263151',
                         headerTitleAlign: 'left',
                         headerTintColor: 'white',
+                        headerShadowVisible: false,
                         headerStyle: {
                             backgroundColor: '#263151',
                         },

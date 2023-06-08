@@ -1,12 +1,30 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
+import { FIREBASE_AUTH } from '../services/firebase/config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const LoginScreen = ({ navigation }) => {
-    const [ name, setName ] = useState();
+    /* State */
+    const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
 
+    /* Methods */
+    const _loginUser = async (_) => {
 
+        try {
+            const creds = await signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
+
+            if (creds.user) {
+                navigation.navigate('Home');
+            }
+        } catch (e) {
+            Alert.alert('Error', e.message);
+        }
+    };
+
+
+    /* Render Component */
     return (
         <View style={ styles.scrollViewContainer }>
             <ScrollView contentContainerStyle={ styles.container }>
@@ -23,8 +41,8 @@ const LoginScreen = ({ navigation }) => {
                             outlineColor="white"
                             textColor="white"
                             activeOutlineColor="white"
-                            value={ name }
-                            onChangeText={ setName }
+                            value={ email }
+                            onChangeText={ setEmail }
                             style={ styles.textField }
                             label={ <Text style={ styles.labelText }>Name</Text> }
                         />
@@ -46,7 +64,10 @@ const LoginScreen = ({ navigation }) => {
                     </TouchableOpacity>
 
                     {/* Submit Button */ }
-                    <TouchableOpacity style={ styles.button }>
+                    <TouchableOpacity
+                        style={ styles.button }
+                        onPress={ _loginUser }
+                    >
                         <Text style={ styles.buttonText }>Submit</Text>
                     </TouchableOpacity>
                 </View>
@@ -56,7 +77,7 @@ const LoginScreen = ({ navigation }) => {
                     <Text style={ styles.buttonText }>Don't have an account?</Text>
                     <TouchableOpacity style={ styles.greenButton }>
                         <Text
-                            onPress={ () => navigation.navigate('Register') }
+                            onPress={ (_) => navigation.navigate('Register') }
                             style={ styles.greenButtonText }
                         >Register Here</Text>
                     </TouchableOpacity>
