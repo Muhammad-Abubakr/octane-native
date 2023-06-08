@@ -1,0 +1,77 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Tomorrow-Black.ttf",
+      "sha1": "5ec561f8141566a9da6268cfb897f928bfc08643"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-BlackItalic.ttf",
+      "sha1": "a856ca9c942423a7bc62d28ee46ebaf988497929"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-Bold.ttf",
+      "sha1": "6565f4b4da4711cda9d25c5a5b43c02485ce730b"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-BoldItalic.ttf",
+      "sha1": "4d93866376874504057ec97c783b6077ed992b76"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-ExtraBold.ttf",
+      "sha1": "54209be6d00c2ac37606adf005fb268a28436878"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-ExtraBoldItalic.ttf",
+      "sha1": "a5f20f2c02540a38ff2b4135315b608d5139d6ec"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-ExtraLight.ttf",
+      "sha1": "4eaa7c62848d36619a4bfb4c2f822e36428d090e"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-ExtraLightItalic.ttf",
+      "sha1": "73005a27949e90790a3e3ead182d1dcc7fc6be94"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-Italic.ttf",
+      "sha1": "38bcfd855cabd2a2943f4405640aba9c2486c8d3"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-Light.ttf",
+      "sha1": "5b756080e9bb5676402ce4cd65ef9fbf39d6f17c"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-LightItalic.ttf",
+      "sha1": "80fb4359a7d54ed4d1f29b51368408352b53f2e9"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-Medium.ttf",
+      "sha1": "69f93f9f402d07be788438f6783df278a09abb95"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-MediumItalic.ttf",
+      "sha1": "f0ef914b8d9c4d029f08671d6f5a9872f4ad4aa8"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-Regular.ttf",
+      "sha1": "856556d8df69fe29b2d5360dc71468a90e942d99"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-SemiBold.ttf",
+      "sha1": "5095cf3d1084fbabdc5fce9ed65e9df4bf87142a"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-SemiBoldItalic.ttf",
+      "sha1": "150ff2f3b2ebf1335f4850970fc6923c47bd2c23"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-Thin.ttf",
+      "sha1": "1d055427c99ceafb24213520876319792a688abf"
+    },
+    {
+      "path": "assets/fonts/Tomorrow-ThinItalic.ttf",
+      "sha1": "2c4cb2350fbef36b9d9a94b1992e24dfe32302de"
+    }
+  ]
+}
