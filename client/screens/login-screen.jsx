@@ -16,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
             const creds = await signInWithEmailAndPassword(FIREBASE_AUTH, email, password);
 
             if (creds.user) {
-                navigation.navigate('Wrapper');
+                navigation.replace('Wrapper');
             }
         } catch (e) {
             Alert.alert('Error', e.message);
