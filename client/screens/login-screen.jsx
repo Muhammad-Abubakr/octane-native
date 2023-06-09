@@ -44,7 +44,7 @@ const LoginScreen = ({ navigation }) => {
                             value={ email }
                             onChangeText={ setEmail }
                             style={ styles.textField }
-                            label={ <Text style={ styles.labelText }>Name</Text> }
+                            label={ <Text style={ styles.labelText }>Email</Text> }
                         />
                         <TextInput
                             mode="outlined"
