@@ -29,6 +29,7 @@ function HomeWrapper() {
                     />),
                 } }
             />
+
             <Tab.Screen
                 name="History"
                 component={ HistoryScreen }

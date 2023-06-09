@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         marginBottom: 16,
         marginTop: 8,
-        color: 'white',
+        color: '#AFB2B7',
     },
 });
 

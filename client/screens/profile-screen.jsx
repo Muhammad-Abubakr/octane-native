@@ -7,7 +7,7 @@ import Divider from '../components/divider';
 import Heading from '../components/heading';
 import NotificationSwitch from '../components/notifications-switch';
 
-const LoginScreen = ({ navigation }) => {
+const ProfileScreen = ({ navigation }) => {
     /* State */
     const [ name, setName ] = useState();
     const [ email, setEmail ] = useState();
@@ -35,8 +35,8 @@ const LoginScreen = ({ navigation }) => {
                 <Divider />
 
                 {/* TextFields */ }
+                <Heading text="User Settings" />
                 <View style={ styles.body }>
-                    <Heading text="User Settings" />
                     <View style={ styles.inputFieldsContainer }>
                         <TextInput
                             mode="outlined"
@@ -91,10 +91,29 @@ const LoginScreen = ({ navigation }) => {
 
                 <Divider />
                 {/* Footer */ }
+                <Heading text="Application Settings" />
                 <View style={ styles.footer } >
-                    <Heading text="Application Settings" />
                     <NotificationSwitch />
                 </View>
+
+                <Divider />
+                {/* Forums */ }
+                <Heading text="Forums" />
+                <View style={ styles.forums } >
+                    <TouchableOpacity
+                        onPress={ () => navigation.navigate('Chat') }
+                        style={ [ styles.button, { padding: 4 } ] }
+                    >
+                        <Button labelStyle={ styles.buttonText } >Chat</Button>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={ () => navigation.navigate('CreateForum') }
+                        style={ [ styles.button, { padding: 4 } ] }
+                    >
+                        <Button labelStyle={ styles.buttonText } >Create Forum</Button>
+                    </TouchableOpacity>
+                </View>
+
 
             </ScrollView>
         </View>
@@ -187,6 +206,12 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         paddingHorizontal: '15%',
     },
+    forums: {
+        flex: 0,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginBottom: 32,
+    },
 });
 
-export default LoginScreen;
+export default ProfileScreen;

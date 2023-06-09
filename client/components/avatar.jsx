@@ -16,9 +16,9 @@ const Avatar = ({ imageUrl }) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
+        width: 120,
+        height: 120,
+        borderRadius: 60,
         overflow: 'hidden',
         alignItems: 'center',
         justifyContent: 'center',

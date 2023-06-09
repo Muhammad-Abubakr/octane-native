@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { FIREBASE_AUTH } from '../services/firebase/config';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const RegisterScreen = ({ navigation }) => {
     /* State */
@@ -18,11 +19,11 @@ const RegisterScreen = ({ navigation }) => {
             const creds = await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password);
 
             if (creds.user) {
-
                 // updating the display name of the user
                 await updateProfile(creds.user, {
                     displayName: name,
                 });
+
 
                 navigation.navigate('Login');
             }
@@ -114,12 +115,12 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     scrollViewContainer: {
         flex: 1,
+        backgroundColor: '#263151',
     },
     container: {
         flexGrow: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        backgroundColor: '#263151',
         color: 'white',
     },
     logoContainer: {
